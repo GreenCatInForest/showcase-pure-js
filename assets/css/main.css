@@ -1,0 +1,91 @@
+:root {
+  font-size: 16px;
+  --bgColor: #000;
+  --onBg: #ffffff;
+
+  --accentColor: #7d1691;
+  --trasparentAccentColor: hsla(336, 100%, 50%, 0.2);
+  --darkeraccentColor: #3e1346;
+  --onAccent: #ffffff;
+
+  --sizeXs: 0.5rem;
+  --sizeSm: calc(var(--sizeXs) * 1.5);
+  --sizeMd: calc(var(--sizeSm) * 1.5);
+  --sizeLg: calc(var(--sizeMd) * 1.5);
+  --sizeXl: calc(var(--sizeLg) * 1.5);
+  --sizeXXl: calc(var(--sizeXl) * 1.5);
+}
+
+* {
+  /* CSS Reset for all elements */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accentColor);
+  color: var(--onAccent);
+  font-size: var(--sizeLg);
+}
+
+header nav ul h1 {
+  background-color: var(--accentColor);
+  color: var(--onAccent);
+  padding: var(--sizeXs) 100vw var(--sizeXs) 100vw;
+}
+header nav ul li {
+  display: none;
+  padding: var(--sizeXl);
+  font-size: var(--sizeXXl);
+}
+
+header nav ul li:hover {
+  background-color: var(--onAccent);
+  color: var(--accentColor);
+  width: 100vw;
+}
+
+main section wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+main section wrapper h1 {
+  text-align: left;
+  font-size: var(--sizeXXl);
+  padding: var(--sizeLg);
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+header nav ul li {
+  list-style: none;
+  padding: var(--sizeSm);
+}
+
+img {
+  width: 100%;
+}
