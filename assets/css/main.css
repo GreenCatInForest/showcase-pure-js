@@ -35,12 +35,16 @@ body {
   max-width: 100svw;
 }
 
+header {
+  background-color: var(--accentColor);
+  color: var(--onAccent);
+}
+
 header nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: var(--accentColor);
   color: var(--onAccent);
   font-size: var(--sizeLg);
 }
@@ -56,7 +60,6 @@ header nav ul {
 header nav ul h1 {
   background-color: var(--accentColor);
   color: var(--onAccent);
-  padding: var(--sizeXs) 100vw var(--sizeXs) 100vw;
 }
 header nav ul li {
   display: none;
