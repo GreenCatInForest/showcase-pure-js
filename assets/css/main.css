@@ -1,3 +1,5 @@
+/* FOR MOBILE SCREENS */
+
 :root {
   font-size: 16px;
   --bgColor: #000;
@@ -16,9 +18,8 @@
   --sizeXXl: calc(var(--sizeXl) * 1.5);
 }
 
+/* CSS Reset for all elements */
 * {
-  /* CSS Reset for all elements */
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -36,68 +37,46 @@ body {
   max-width: 100svw;
 }
 
+/* Header styles */
+
 header {
   background-color: var(--accentColor);
   color: var(--onAccent);
 }
 
-header nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  color: var(--onAccent);
-  font-size: var(--sizeLg);
+header h1 {
+  border: 1px solid black;
+  filter: drop-shadow(2px 2px 2px rgb(72, 2, 86))
+    drop-shadow(-2px -2px 2px rgb(72, 2, 86));
 }
 
-header nav ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+header h1:hover {
+  border: 1px solid black;
+  filter: drop-shadow(1px 1px 1px rgb(72, 2, 86))
+    drop-shadow(-1px -1px 1px rgb(72, 2, 86));
 }
 
-/*header nav ul h1 {
-  background-color: var(--accentColor);
-  color: var(--onAccent);
-}
-header nav ul li {
+.headerNav {
   display: none;
-  padding: var(--sizeXl);
-  font-size: var(--sizeXXl);
-  list-style: none;
-  padding: var(--sizeSm);
 }
 
-header nav ul li:hover {
-  background-color: var(--onAccent);
-  color: var(--accentColor);
-  width: 100vw;
-}
-*/
+/* Main styles */
 
-main section.intro {
+.intro {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
 }
 
-div#sky {
-  height: 200vh;
-  background-image: url("/assets/img/cloud-5946381.jpg");
-  background-size: 60%;
-  background-repeat: no-repeat;
-}
-
-main section.intro h1 {
-  text-align: left;
+.intro h1 {
+  width: 90vw;
+  text-align: center;
   font-size: var(--sizeXXl);
-  padding: var(--sizeLg);
+  padding: var(--sizeXXl);
 }
 
-main section.intro img {
+.intro img {
   width: 80vw;
   border-radius: 22%;
   border: 2px solid #7d1691;
@@ -151,7 +130,14 @@ h1 {
   padding: var(--sizeLg);
 }
 
-/* FOR DESKTOPS */
+div#sky {
+  height: 200vh;
+  background-image: url("/assets/img/cloud-5946381.jpg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+/* FOR DESKTOP SCREENS */
 
 @media screen and (min-width: 601px) {
   :root {
@@ -198,6 +184,42 @@ h1 {
     filter: drop-shadow(2px 2px 2px rgb(72, 2, 86))
       drop-shadow(-2px -2px 2px rgb(72, 2, 86));
   }
+
+  .headerNav {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--onAccent);
+    font-size: var(--sizeLg);
+  }
+
+  /* header nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/*header nav ul h1 {
+  background-color: var(--accentColor);
+  color: var(--onAccent);
+}
+header nav ul li {
+  display: none;
+  padding: var(--sizeXl);
+  font-size: var(--sizeXXl);
+  list-style: none;
+  padding: var(--sizeSm);
+}
+
+header nav ul li:hover {
+  background-color: var(--onAccent);
+  color: var(--accentColor);
+  width: 100vw;
+}
+*/
 
   /* Main style*/
 
