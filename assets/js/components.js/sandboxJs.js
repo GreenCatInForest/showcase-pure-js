@@ -1,4 +1,4 @@
-const showcast = document.querySelector(".showcast");
+const sandbox = document.querySelector(".sandbox");
 
 // Reverse String
 
@@ -14,17 +14,17 @@ let spinWords = (string) => {
   return reversedArray.join(" ");
 };
 
-const reverseString = document.querySelector("#reverseString");
-const reverseStringJs = document.createElement("article");
+const reverseString = document.createElement("article");
+reverseString.classList.add("reverseString");
 addEventListener("submit", (e) => {
   e.preventDefault();
   let input = document.querySelector("#reverseStringInput").value;
   let result = spinWords(input);
-  reverseStringJs.innerHTML += `<p>${result}</p>`;
-  sandboxJs.appendChild(reverseStringJs);
+  reverseString.innerHTML += `<p>${result}</p>`;
+  sandbox.appendChild(reverseString);
 });
 
-reverseStringJs.innerHTML = `
+reverseString.innerHTML = `
     <h2>Reverse String</h2>
     <h3>Description</h3>
     <p>Write a function that takes 
@@ -52,11 +52,8 @@ reverseStringJs.innerHTML = `
     <p></p>`;
 
 const createSandbox = () => {
-  sandboxJs = document.createElement("article");
-  sandboxJs.classList.add("sandboxJs");
-  sandboxJs.innerHTML = `
-    <h2>Vanilla JS Sandbox Showcast</h2>`;
-  showcast.appendChild(sandboxJs);
-  sandboxJs.appendChild(reverseStringJs);
+  sandbox.innerHTML = `
+    <h2>Sandbox</h2>`;
+  sandbox.appendChild(reverseString);
 };
 createSandbox();
