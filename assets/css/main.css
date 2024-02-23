@@ -11,7 +11,8 @@
   article,
   .projects,
   .projects > *,
-  .projectsList > * {
+  .projectsList > *,
+  .projectsItem > * {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -215,19 +216,32 @@
   .projects {
   }
 
-  .projectsList img:nth-child(1) {
-    background-image: url("../assets/img//assets/img/a_greyhound_riding_a_bicycle_on_the_moon_logo__2409804378.png");
-    background-size: cover;
-    clip-path: polygon(
-      28% 40%,
-      30% 11%,
-      59% 5%,
-      64% 11%,
-      72% 29%,
-      30% 11%,
-      28% 40%
-    );
+  projectsList .projectsItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    position: relative;
   }
+
+  .projectsList .projectsItem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    clip-path: polygon(
+      36% 10%,
+      20% 70%,
+      80% 90%,
+      80% 5%,
+      90% 0%,
+      80% 5%,
+      36% 10%
+    );
+    overflow: hidden;
+  }
+
   /* .projectsList {
     clip-path: polygon(
       20% 22%,
