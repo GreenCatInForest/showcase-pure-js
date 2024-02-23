@@ -20,7 +20,7 @@ addEventListener("submit", (e) => {
   e.preventDefault();
   let input = document.querySelector("#reverseStringInput").value;
   let result = spinWords(input);
-  reverseString.innerHTML += `<p>${result}</p>`;
+  reverseString.innerHTML += `<p>Result: ${result}</p>`;
   sandbox.appendChild(reverseString);
 });
 
@@ -38,7 +38,7 @@ reverseString.innerHTML = `
 
     <h3>Examples:</h3>
     
-    "Hey fellow warriors"  --> "Hey wollef sroirraw" 
+    <p>"Hey fellow warriors"  --> "Hey wollef sroirraw" 
     "This is a test        --> "This is a test" 
     "This is another test" --> "This is rehtona test"</p>
 
@@ -46,14 +46,14 @@ reverseString.innerHTML = `
     
     <form id="reverseStringForm">
     <label for="reverseStringInput">Enter a string</label>
-    <input type="text" id="reverseStringInput" />
+    <input type="text" id="reverseStringInput" placeholder="Place your sentence here, please"/>
     <button type="submit">Reverse</button>
     </form>
     <p></p>`;
 
 const createSandbox = () => {
   sandbox.innerHTML = `
-    <h1>Sandbox</h1>`;
+    <h1 class="text">Sandbox</h1>`;
   sandbox.appendChild(reverseString);
 };
 createSandbox();
