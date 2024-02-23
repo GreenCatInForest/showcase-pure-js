@@ -53,7 +53,7 @@ reverseString.innerHTML = `
 
 const createSandbox = () => {
   sandbox.innerHTML = `
-    <h2>Sandbox</h2>`;
+    <h1>Sandbox</h1>`;
   sandbox.appendChild(reverseString);
 };
 createSandbox();
