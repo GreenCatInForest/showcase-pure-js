@@ -284,7 +284,14 @@
     background-size: contain;
     background-repeat: repeat;
     color: transparent;
-    /* animation: occupationAnimation 140s ease-in-out infinite; */
+  }
+
+  .text {
+    transition: transform 1s ease-in-out; /* Add transition for smooth effect */
+  }
+
+  .text:hover {
+    transform: skewX(20deg) skewX(270deg); /* Change shape on hover */
   }
 }
 
