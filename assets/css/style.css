@@ -46,7 +46,10 @@ main {
 }
 
 h1 {
+  font-size: var(--sizeXl);
+  padding: var(--sizeXl);
 }
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -238,6 +241,7 @@ h1 {
 }
 
 main h1 {
+  color: var(--bgColor);
   font-size: var(--sizeXl);
   padding: var(--sizeXl);
 }
@@ -266,23 +270,15 @@ main h1 {
   padding: var(--sizeXs);
 }
 
-/* Dinosaur*/
-
-#dinosaurWrapper {
-  border-bottom: 2px solid black;
-}
-
-#dinosaurFigure {
-  width: var(--sizeXXl);
-}
-
 /* FOR DESCTOP SCREENS */
 
 @media screen and (min-width: 601px) {
   body {
-    max-width: 100svw;
+    max-width: 80svw;
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    margin: 0 auto;
     gap: var(--sizeMdL);
   }
 
