@@ -673,7 +673,9 @@ section h1 {
 
 .sandbox {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 20px;
@@ -682,6 +684,8 @@ section h1 {
 
 .reverseString {
   display: flex;
+  width: 40%;
+  margin: 0 auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -692,6 +696,7 @@ section h1 {
 
 .reverseString > * {
   gap: var(--sizeXXl);
+  width:60%;
 }
 
 .reverseString h3 {
@@ -741,6 +746,7 @@ section h1 {
   
   background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);;}
 
+// Reasons
 
 // Social Media
 

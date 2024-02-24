@@ -26,7 +26,7 @@ addEventListener("submit", (e) => {
 
 reverseString.innerHTML = `
     <h2>Reverse String</h2>
-    <h3>Description</h3>
+    <h3>Description:</h3>
     <p>Write a function that takes 
     in a string of one or more words, 
     and returns the same string, but with 
@@ -42,7 +42,7 @@ reverseString.innerHTML = `
     "This is a test        --> "This is a test" 
     "This is another test" --> "This is rehtona test"</p>
 
-    <h3>My Solution</h3>
+    <h3>My Solution:</h3>
     
     <form id="reverseStringForm">
     <label for="reverseStringInput">Enter a string</label>
