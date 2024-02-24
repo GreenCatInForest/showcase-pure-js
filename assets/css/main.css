@@ -370,6 +370,43 @@ section h1 {
   
   background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);;}
 
+  // Reasons
+section.reasons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sizeMd); 
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sizeMd); 
+}
+
+
+.reasons>h1>span {
+font-size: var(--sizeLg);
+font-weight: 800;
+}
+.reasons > ol {
+  padding: var(--sizeMd);
+}
+
+.reasons > ol > li {
+  list-style-type: decimal;
+  list-style-position: inside;
+  padding: var(--sizeMd);
+  font-size: var(--sizeMd);
+  text-align: left;
+  color: black;
+}
+
 
 // Social Media
 
@@ -379,7 +416,7 @@ section h1 {
   justify-content: center;
 }
 
-.social ul li {
+.social > ul > li {
   list-style: none;
 }
 
@@ -632,7 +669,7 @@ header {
   margin: 0 auto;
 }
 
-.buttonGroup button {
+.buttonGroup > button {
   width: 30%;
   border-radius: 5px;
   padding: var(--sizeSm);
@@ -641,7 +678,7 @@ header {
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
 }
 
-.buttonGroup button:hover {
+.buttonGroup > button:hover {
   border-radius: 2px;
 background: #ffffff;
 box-shadow:  inset 3px 3px 8px #666666,
@@ -747,6 +784,50 @@ section h1 {
   background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);;}
 
 // Reasons
+section.reasons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sizeMd); 
+  width:60%;
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sizeMd); 
+}
+
+.reasons>h1>span {
+font-size: var(--sizeLg);
+font-weight: 800;
+}
+
+.reasons>h2 {
+  width:40%;
+}
+
+.reasons > ol {
+  width:60%;
+}
+
+.reasons > ol > li {
+  list-style-type: decimal;
+  list-style-position: inside;
+  padding: var(--sizeMd);
+  font-size: var(--sizeMd);
+  text-align: left;
+  color: black;
+
+}
+
+
+
 
 // Social Media
 
@@ -756,7 +837,7 @@ section h1 {
   justify-content: center;
 }
 
-.social ul li {
+.social > ul > li {
   list-style: none;
 }
 
