@@ -235,6 +235,13 @@ body {
   );
   overflow: hidden;
 }
+.projectsList .projectsItem img:hover {
+  /* transform: scale(1.1); */
+  transition: all 0.5s ease-in-out;
+
+  filter: grayscale(100%) opacity(0.5) contrast(200%);
+}
+
 
 .projectsTitle {
   font-size: var(--sizeMd);
@@ -599,6 +606,13 @@ header {
     36% 10%
   );
   overflow: hidden;
+}
+
+.projectsItem img:hover {
+  /* transform: scale(1.1); */
+  transition: all 0.5s ease-in-out;
+
+  filter: grayscale(100%) opacity(0.5) contrast(200%);
 }
 
 .projectsTitle {
