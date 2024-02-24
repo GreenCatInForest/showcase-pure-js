@@ -1,5 +1,35 @@
 const sandbox = document.querySelector(".sandbox");
 
+// Bit Counting
+
+const bitCounting = document.createElement("article");
+bitCounting.classList.add("bitCounting", "sandboxItem");
+addEventListener("submit", (e) => {
+  e.preventDefault();
+  let input = document.querySelector("#bitCountingInput").value;
+  let result = spinWords(input);
+  bitCounting.innerHTML += `<p>Result: ${result}</p>`;
+  sandbox.appendChild(bitCounting);
+});
+
+bitCounting.innerHTML = `
+    <h2>Bit Counting</h2>
+    <h3>Description:</h3>
+    <p>Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.</p>
+
+    <h3>Examples:</h3>
+    
+    <p>The binary representation of 1234 is 10011010010. In this binary representation, there are five bits that are equal to one: 1, 1, 1, 1, and 1. So the function should return 5 in this case</p>
+
+    <h3>My Solution:</h3>
+    
+    <form id="bitCountingForm">
+    <label for="bitCountingInput">Enter a number</label>
+    <input type="text" id="bitCountingInput" placeholder="Place your number here, please"/>
+    <button type="submit">How many bits?</button>
+    </form>
+    <p></p>`;
+
 // Reverse String
 
 let spinWords = (string) => {
@@ -15,7 +45,7 @@ let spinWords = (string) => {
 };
 
 const reverseString = document.createElement("article");
-reverseString.classList.add("reverseString");
+reverseString.classList.add("reverseString", "sandboxItem");
 addEventListener("submit", (e) => {
   e.preventDefault();
   let input = document.querySelector("#reverseStringInput").value;
@@ -55,5 +85,6 @@ const createSandbox = () => {
   sandbox.innerHTML = `
     <h1 class="text">Sandbox</h1>`;
   sandbox.appendChild(reverseString);
+  sandbox.appendChild(bitCounting);
 };
 createSandbox();
