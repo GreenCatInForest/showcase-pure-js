@@ -5,22 +5,27 @@ const sandbox = document.querySelector(".sandbox");
 let countBits = (n) => {
   let binaryN = [];
   n = parseInt(n);
-  n < 0
-    ? console.log("The number is negative, please enter the correct number")
-    : defineBinary(n);
-};
 
-//   let defineBinary = (n) => {
-//     while (n > 0) {
-//       exponent = Math.floor(Math.log2(n));
-//       let digit = n % 2;
-//       binaryN.push(digit);
-//       n = Math.floor(n / 2);
-//     }
-//     return binaryN.filter((binaryDigit) => binaryDigit === "1").length;
-//   };
-// };
-// countBits();
+  let defineBinary = (a) => {
+    while (a > 0) {
+      let digit = a % 2;
+      binaryN.push(digit);
+      a = Math.floor(a / 2);
+    }
+    return (
+      (numberOfBits = binaryN.filter(
+        (binaryDigit) => binaryDigit === 1
+      ).length),
+      (binaryNumber = binaryN.join())
+    );
+  };
+
+  if (n < 0) {
+    console.log("The number is negative, please enter the correct number");
+  } else {
+    return defineBinary(n);
+  }
+};
 
 const bitCounting = document.createElement("article");
 bitCounting.classList.add("bitCounting", "sandboxItem");
@@ -28,7 +33,11 @@ addEventListener("submit", (e) => {
   e.preventDefault();
   let input = document.querySelector("#bitCountingInput").value;
   let result = countBits(input);
-  bitCounting.innerHTML += `<p>Result: ${result}</p>`;
+  bitCounting.innerHTML += `<ul>Result: 
+  <li>Your number: ${input} </li>
+  <li>Binary interpretation: ${binaryNumber}</li>
+  <li>Number of bits: ${numberOfBits}</li> 
+  </ul>`;
   sandbox.appendChild(bitCounting);
 });
 
