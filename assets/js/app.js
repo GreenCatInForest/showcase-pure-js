@@ -1,7 +1,7 @@
 // Function to detect if the site is deployed on GitHub Pages
 
 isGitHubPages = () => {
-  return window.location.hostname === "greencatinforest.github.io";
+  return window.location.hostname === "GreenCatInForest.github.io";
 };
 
 const headerNameImgURL = isGitHubPages()
