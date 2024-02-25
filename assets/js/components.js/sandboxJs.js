@@ -1,9 +1,14 @@
 const sandbox = document.querySelector(".sandbox");
 
 // Easy Logarithm
-
 const countEasyLogs = (x, a, b) => {
-  console.log(x, a, b);
+  x = parseInt(x);
+  a = parseInt(a);
+  b = parseInt(b);
+
+  if (x > 1 && a > 0 && b > 0) {
+    return countLog(x, a, b);
+  } else console.log("Please enter base >1 and numbers > 0");
 };
 
 const logCounting = document.createElement("article");
@@ -13,7 +18,16 @@ addEventListener("submit", (e) => {
   let baseLog = document.querySelector("#logBaseInput").value;
   let number1 = document.querySelector("#log1NumberInput").value;
   let number2 = document.querySelector("#log2NumberInput").value;
-  countEasyLogs(baseLog, number1, number2);
+  let countEasyLogsResult = countEasyLogs(baseLog, number1, number2);
+  countEasyLogsResult
+    ? (document.getElementById("result").innerHTML = "")
+    : null;
+  countEasyLogsResult
+    ? (document.getElementById("result").innerHTML += `<ul>Result: 
+        <li>${countEasyLogsResult}</li> 
+    </ul>`)
+    : null;
+  sandbox.appendChild(logCounting);
 });
 
 logCounting.innerHTML = `
@@ -64,12 +78,14 @@ addEventListener("submit", (e) => {
 
   let number = document.querySelector("#bitCountingInput").value;
   countBits(number);
-  document.getElementById("result").innerHTML = "";
-  document.getElementById("result").innerHTML += `<ul>Result: 
+  countBits(number) ? (document.getElementById("result").innerHTML = "") : null;
+  countBits(number)
+    ? (document.getElementById("result").innerHTML += `<ul>Result: 
         <li>Your number is: ${number} </li>
         <li>Binary interpretation: ${binaryNumber}</li>
         <li>Number of bits: ${numberOfBits}</li> 
-    </ul>`;
+    </ul>`)
+    : null;
   sandbox.appendChild(bitCounting);
 });
 
