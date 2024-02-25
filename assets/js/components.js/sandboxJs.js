@@ -32,11 +32,11 @@ bitCounting.classList.add("bitCounting", "sandboxItem");
 addEventListener("submit", (e) => {
   e.preventDefault();
 
-  let input = document.querySelector("#bitCountingInput").value;
-  let result = countBits(input);
+  let number = document.querySelector("#bitCountingInput").value;
+  let result = countBits(number);
   document.getElementById("result").innerHTML = "";
   document.getElementById("result").innerHTML += `<ul>Result: 
-        <li>Your number is: ${input} </li>
+        <li>Your number is: ${number} </li>
         <li>Binary interpretation: ${binaryNumber}</li>
         <li>Number of bits: ${numberOfBits}</li> 
     </ul>`;
@@ -79,9 +79,9 @@ const reverseString = document.createElement("article");
 reverseString.classList.add("reverseString", "sandboxItem");
 addEventListener("submit", (e) => {
   e.preventDefault();
-  let input = document.querySelector("#reverseStringInput").value;
-  let result = spinWords(input);
-  reverseString.innerHTML += `<p>Result: ${result}</p>`;
+  let string = document.querySelector("#reverseStringInput").value;
+  let resultReverseString = spinWords(string);
+  reverseString.innerHTML += `<p>Result: ${resultReverseString}</p>`;
   sandbox.appendChild(reverseString);
 });
 
