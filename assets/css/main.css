@@ -520,15 +520,11 @@ header {
   text-transform: uppercase;
   font-weight: 900;
   -webkit-background-clip: text;
-  /* -webkit-filter: drop-shadow(2px 1px 0px black);*/
-  /* -webkit-text-stroke: 1px rgb(7, 7, 7);  */
-
-  background-clip: text;
-  background-image: url("/assets/img/candy-983094_1280.jpg");
   background-image: url("/assets/img/universe-4609408_1920.jpg");
+  background-clip: text;
+  text-transform: transparent;
   background-size: 120%;
   background-repeat: repeat;
-  color: transparent;
   animation: nameAnimation 15s linear infinite backwards;
 }
 
@@ -537,7 +533,6 @@ header {
   text-transform: uppercase;
   font-weight: 900;
   -webkit-background-clip: text;
-  /*-webkit-text-stroke: 1px rgb(7, 7, 7);*/
 
   background-clip: text;
   background-image: url("/assets/img/code-3637299_1280.jpg");
@@ -555,7 +550,6 @@ header {
   text-transform: uppercase;
   font-weight: 900;
   -webkit-background-clip: text;
-  /*-webkit-text-stroke: 1px rgb(7, 7, 7);*/
 
   background-clip: text;
   background-image: url("/assets/img/code-3637299_1280.jpg");
