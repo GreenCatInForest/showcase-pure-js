@@ -31,13 +31,15 @@ const bitCounting = document.createElement("article");
 bitCounting.classList.add("bitCounting", "sandboxItem");
 addEventListener("submit", (e) => {
   e.preventDefault();
+
   let input = document.querySelector("#bitCountingInput").value;
   let result = countBits(input);
-  bitCounting.innerHTML += `<ul>Result: 
-  <li>Your number is: ${input} </li>
-  <li>Binary interpretation: ${binaryNumber}</li>
-  <li>Number of bits: ${numberOfBits}</li> 
-  </ul>`;
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("result").innerHTML += `<ul>Result: 
+        <li>Your number is: ${input} </li>
+        <li>Binary interpretation: ${binaryNumber}</li>
+        <li>Number of bits: ${numberOfBits}</li> 
+    </ul>`;
   sandbox.appendChild(bitCounting);
 });
 
@@ -57,7 +59,7 @@ bitCounting.innerHTML = `
     <input type="number" id="bitCountingInput" pattern="[0-9]*" inputmode="numeric" placeholder="Place your number here, please"/>
     <button type="submit">How many bits?</button>
     </form>
-    <p></p>`;
+    <div id="result"></div>`;
 
 // Reverse String
 
