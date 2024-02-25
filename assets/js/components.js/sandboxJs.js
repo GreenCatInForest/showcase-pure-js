@@ -1,5 +1,35 @@
 const sandbox = document.querySelector(".sandbox");
 
+// Easy Logarithm
+
+const countEasyLogs = (x, a, b) => {
+  console.log(x, a, b);
+};
+
+const logCounting = document.createElement("article");
+logCounting.classList.add("logCounting", "sandboxItem");
+addEventListener("submit", (e) => {
+  e.preventDefault();
+  let baseLog = document.querySelector("#logBaseInput").value;
+  let number1 = document.querySelector("#log1NumberInput").value;
+  let number2 = document.querySelector("#log2NumberInput").value;
+  countEasyLogs(baseLog, number1, number2);
+});
+
+logCounting.innerHTML = `
+    <h2>Easy Logarithm Counting</h2>
+    <h3>Description:</h3>
+    <p>Given a logarithm base X and two values A and B, return a sum of logratihms with the base X.</p>
+    <h3>My Solution:</h3>
+    <form id="logCountingForm">
+    <label for="logCountingInput">Enter a base for the logarithm and a numbers here:</label>
+    <input type="number" id="logBaseInput" pattern="[0-9]*" inputmode="numeric" placeholder="Place your base number here, please" required/>
+    <input type="number" id="log1NumberInput" pattern="[0-9]*" inputmode="numeric" placeholder="Place your first number here, please" required/>
+    <input type="number" id="log2NumberInput" pattern="[0-9]*" inputmode="numeric" placeholder="Place your second number here, please" required/>
+    <button type="submit">Add logs</button>
+    </form>
+    <div id="result"></div>`;
+
 // Bit Counting
 
 let countBits = (n) => {
@@ -33,7 +63,7 @@ addEventListener("submit", (e) => {
   e.preventDefault();
 
   let number = document.querySelector("#bitCountingInput").value;
-  let result = countBits(number);
+  countBits(number);
   document.getElementById("result").innerHTML = "";
   document.getElementById("result").innerHTML += `<ul>Result: 
         <li>Your number is: ${number} </li>
@@ -81,7 +111,8 @@ addEventListener("submit", (e) => {
   e.preventDefault();
   let string = document.querySelector("#reverseStringInput").value;
   let resultReverseString = spinWords(string);
-  reverseString.innerHTML += `<p>Result: ${resultReverseString}</p>`;
+  resultReverseString &&
+    (reverseString.innerHTML += `<p>Result: ${resultReverseString}</p>`);
   sandbox.appendChild(reverseString);
 });
 
@@ -117,5 +148,6 @@ const createSandbox = () => {
     <h1 class="text">Sandbox</h1>`;
   sandbox.appendChild(reverseString);
   sandbox.appendChild(bitCounting);
+  sandbox.appendChild(logCounting);
 };
 createSandbox();
