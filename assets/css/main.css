@@ -520,12 +520,12 @@ header {
   text-transform: uppercase;
   font-weight: 900;
   -webkit-background-clip: text;
-  background-image: url("/assets/img/universe-4609408_1920.jpg");
   background-clip: text;
-  text-transform: transparent;
+  color: transparent;
   background-size: 120%;
   background-repeat: repeat;
   animation: nameAnimation 15s linear infinite backwards;
+  background-image: var(--background-image);
 }
 
 #occupation {
