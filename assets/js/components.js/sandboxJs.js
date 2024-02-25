@@ -6,6 +6,12 @@ const countEasyLogs = (x, a, b) => {
   a = parseInt(a);
   b = parseInt(b);
 
+  let countLog = (x, a, b) => {
+    let logA = Math.log(a) / Math.log(x);
+    let logB = Math.log(b) / Math.log(x);
+    return logA + logB;
+  };
+
   if (x > 1 && a > 0 && b > 0) {
     return countLog(x, a, b);
   } else console.log("Please enter base >1 and numbers > 0");
@@ -20,10 +26,10 @@ addEventListener("submit", (e) => {
   let number2 = document.querySelector("#log2NumberInput").value;
   let countEasyLogsResult = countEasyLogs(baseLog, number1, number2);
   countEasyLogsResult
-    ? (document.getElementById("result").innerHTML = "")
+    ? (document.getElementById("logCountingResult").innerHTML = "")
     : null;
   countEasyLogsResult
-    ? (document.getElementById("result").innerHTML += `<ul>Result: 
+    ? (document.getElementById("logCountingResult").innerHTML += `<ul>Result: 
         <li>${countEasyLogsResult}</li> 
     </ul>`)
     : null;
@@ -42,7 +48,7 @@ logCounting.innerHTML = `
     <input type="number" id="log2NumberInput" pattern="[0-9]*" inputmode="numeric" placeholder="Place your second number here, please" required/>
     <button type="submit">Add logs</button>
     </form>
-    <div id="result"></div>`;
+    <div id="logCountingResult"></div>`;
 
 // Bit Counting
 
@@ -77,9 +83,9 @@ addEventListener("submit", (e) => {
   e.preventDefault();
 
   let number = document.querySelector("#bitCountingInput").value;
-  countBits(number);
-  countBits(number) ? (document.getElementById("result").innerHTML = "") : null;
-  countBits(number)
+  let countBitsResult = countBits(number);
+  document.getElementById("result").innerHTML = "";
+  countBitsResult
     ? (document.getElementById("result").innerHTML += `<ul>Result: 
         <li>Your number is: ${number} </li>
         <li>Binary interpretation: ${binaryNumber}</li>
