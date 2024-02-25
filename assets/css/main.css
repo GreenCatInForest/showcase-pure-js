@@ -274,6 +274,11 @@ box-shadow:  inset 3px 3px 8px #666666,
 inset -3px -3px 8px #ffffff;
 }
 
+.buttonGroup button a {
+  text-decoration: none;
+  color: #000;
+}
+
 
 section h1 {
   font-size: var(--sizeXXl);
@@ -361,13 +366,9 @@ section h1 {
   color: #000;
   font-weight: 900;
   cursor: pointer;
-
   background: hsla(217, 100%, 50%, 1);
-
   background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
-  
   background: -moz-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
-  
   background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);;}
 
   // Reasons
@@ -676,6 +677,11 @@ header {
 background: #ffffff;
 box-shadow:  inset 3px 3px 8px #666666,
 inset -3px -3px 8px #ffffff;
+}
+
+.buttonGroup button a {
+  text-decoration: none;
+  color: #000;
 }
 
 section h1 {
