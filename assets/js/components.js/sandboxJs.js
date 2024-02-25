@@ -9,14 +9,14 @@ let countBits = (n) => {
   let defineBinary = (a) => {
     while (a > 0) {
       let digit = a % 2;
-      binaryN.push(digit);
+      binaryN.unshift(digit);
       a = Math.floor(a / 2);
     }
     return (
       (numberOfBits = binaryN.filter(
         (binaryDigit) => binaryDigit === 1
       ).length),
-      (binaryNumber = binaryN.join())
+      (binaryNumber = binaryN.join(""))
     );
   };
 
@@ -34,7 +34,7 @@ addEventListener("submit", (e) => {
   let input = document.querySelector("#bitCountingInput").value;
   let result = countBits(input);
   bitCounting.innerHTML += `<ul>Result: 
-  <li>Your number: ${input} </li>
+  <li>Your number is: ${input} </li>
   <li>Binary interpretation: ${binaryNumber}</li>
   <li>Number of bits: ${numberOfBits}</li> 
   </ul>`;
