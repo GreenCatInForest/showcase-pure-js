@@ -214,6 +214,14 @@ body {
   align-items: center;
 }
 
+#projectImgWrapper{
+  filter: drop-shadow(5px 10px 5px black);
+ }
+
+.buttonGroup {
+  filter: drop-shadow(5px 10px 5px black);
+}
+
 .projectsList .projectsItem img {
   width: 100%;
   height: auto;
@@ -617,6 +625,18 @@ header {
   justify-content: center;
   align-items: center;
   gap: var(--sizeSm);
+}
+
+/* .projectsItem {
+  filter: drop-shadow(5px 10px 5px black);
+ }  */
+
+#projectImgWrapper{
+  filter: drop-shadow(5px 10px 5px black);
+ }
+
+.buttonGroup {
+  filter: drop-shadow(5px 10px 5px black);
 }
 
 .projectsItem img {
