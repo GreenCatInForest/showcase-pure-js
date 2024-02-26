@@ -1,4 +1,5 @@
 const sandbox = document.querySelector(".sandbox");
+// The latest clock
 
 // Easy Logarithm
 const countEasyLogs = (x, a, b) => {
@@ -16,6 +17,21 @@ const countEasyLogs = (x, a, b) => {
     return countLog(x, a, b);
   } else console.log("Please enter base >1 and numbers > 0");
 };
+
+// Playing with the logs
+
+// let a = 10;
+// b = 3;
+// c = 3;
+// let i = 0;
+// let array = [];
+
+// for (let i = 0; i < c; i++) {
+//   let n = a ** i;
+//   n < c ? array.push(n) : null;
+// }
+
+// console.log(array);
 
 const logCounting = document.createElement("article");
 logCounting.classList.add("logCounting", "sandboxItem");
