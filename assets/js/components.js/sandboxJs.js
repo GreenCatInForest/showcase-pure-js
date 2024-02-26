@@ -10,13 +10,52 @@ const countLatestClock = (a, b, c, d) => {
   d = parseInt(d);
 
   let countClock = () => {
-    console.log("I'm here");
+    let potentialTime = [a, b, c, d];
+
+    let hourFirstDigit = Math.max(...potentialTime.filter((num) => num <= 2));
+    let index = potentialTime.indexOf(hourFirstDigit);
+    let potentialTimeLite = potentialTime.toSpliced(index, 1);
+    console.log(potentialTimeLite);
+    let hourSecondDigit;
+
+    hourFirstDigit > 1
+      ? (hourSecondDigit = Math.max(
+          ...potentialTimeLite.filter((num) => num <= 3)
+        ))
+      : (hourSecondDigit = Math.max(
+          ...potentialTimeLite.filter((num) => num <= 9)
+        ));
+
+    index = potentialTimeLite.indexOf(hourSecondDigit);
+    potentialTimeLite = potentialTimeLite.toSpliced(index, 1);
+    console.log(potentialTimeLite);
+    let minuteFirstDigit = Math.max(
+      ...potentialTimeLite.filter((num) => num <= 5)
+    );
+    index = potentialTimeLite.indexOf(minuteFirstDigit);
+    potentialTimeLite = potentialTimeLite.toSpliced(index, 1);
+    console.log(potentialTimeLite);
+
+    let minuteSecondDigit = Math.max(
+      ...potentialTimeLite.filter((num) => num <= 9)
+    );
+
+    console.log(
+      hourFirstDigit,
+      hourSecondDigit,
+      minuteFirstDigit,
+      minuteSecondDigit
+    );
+
+    return `${(hourFirstDigit, hourSecondDigit)}:${
+      (minuteFirstDigit, minuteSecondDigit)
+    }`;
   };
 
   let checkIfNumAreSuitable = () => {
-    let CheckSum = 2 + 3 + 5 + 9;
+    let CheckSum = 2 + 3 + 9 + 9;
     let Sum = a + b + c + d;
-    a >= 0 && b >= 0 && c && d
+    a >= 0 && b >= 0 && c >= 0 && d >= 0
       ? null
       : (document.getElementById(
           "countLatestClockError"
