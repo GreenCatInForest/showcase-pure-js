@@ -3,72 +3,41 @@ const sandbox = document.querySelector(".sandbox");
 // The latest clock
 
 const countLatestClock = (a, b, c, d) => {
-  console.log(a, b, c, d);
   a = parseInt(a);
   b = parseInt(b);
   c = parseInt(c);
   d = parseInt(d);
 
-  let countClock = () => {
-    let potentialTime = [a, b, c, d];
+  if (a < 0 || b < 0 || c < 0 || d < 0) {
+    return "Sorry, you can't enter negative numbers";
+  }
 
-    let hourFirstDigit = Math.max(...potentialTime.filter((num) => num <= 2));
-    let index = potentialTime.indexOf(hourFirstDigit);
-    let potentialTimeLite = potentialTime.toSpliced(index, 1);
-    console.log(potentialTimeLite);
-    let hourSecondDigit;
+  if (a + b + c + d > 2 + 3 + 9 + 9) {
+    return "Sorry, it's impossible to convert those numbers to a valid clock time.";
+  }
 
-    hourFirstDigit > 1
-      ? (hourSecondDigit = Math.max(
-          ...potentialTimeLite.filter((num) => num <= 3)
-        ))
-      : (hourSecondDigit = Math.max(
-          ...potentialTimeLite.filter((num) => num <= 9)
-        ));
+  let hourFirstDigit = Math.max(...[a, b, c, d].filter((num) => num <= 2));
+  let index = [a, b, c, d].indexOf(hourFirstDigit);
+  let potentialTimeLite = [a, b, c, d].toSpliced(index, 1);
 
-    index = potentialTimeLite.indexOf(hourSecondDigit);
-    potentialTimeLite = potentialTimeLite.toSpliced(index, 1);
-    console.log(potentialTimeLite);
-    let minuteFirstDigit = Math.max(
-      ...potentialTimeLite.filter((num) => num <= 5)
-    );
-    index = potentialTimeLite.indexOf(minuteFirstDigit);
-    potentialTimeLite = potentialTimeLite.toSpliced(index, 1);
-    console.log(potentialTimeLite);
+  let hourSecondDigit = Math.max(
+    ...potentialTimeLite.filter((num) =>
+      hourFirstDigit > 1 ? num <= 3 : num <= 9
+    )
+  );
+  index = potentialTimeLite.indexOf(hourSecondDigit);
+  potentialTimeLite = potentialTimeLite.toSpliced(index, 1);
+  console.log(potentialTimeLite);
 
-    let minuteSecondDigit = Math.max(
-      ...potentialTimeLite.filter((num) => num <= 9)
-    );
+  let minuteFirstDigit = Math.max(
+    ...potentialTimeLite.filter((num) => num <= 5)
+  );
+  index = potentialTimeLite.indexOf(minuteFirstDigit);
+  potentialTimeLite = potentialTimeLite.toSpliced(index, 1);
 
-    console.log(
-      hourFirstDigit,
-      hourSecondDigit,
-      minuteFirstDigit,
-      minuteSecondDigit
-    );
+  let minuteSecondDigit = potentialTimeLite[0];
 
-    return `${(hourFirstDigit, hourSecondDigit)}:${
-      (minuteFirstDigit, minuteSecondDigit)
-    }`;
-  };
-
-  let checkIfNumAreSuitable = () => {
-    let CheckSum = 2 + 3 + 9 + 9;
-    let Sum = a + b + c + d;
-    a >= 0 && b >= 0 && c >= 0 && d >= 0
-      ? null
-      : (document.getElementById(
-          "countLatestClockError"
-        ).innerHTML = `<p>Sorry, you can't enter negative numbers</p>`);
-    CheckSum < Sum
-      ? (document.getElementById(
-          "countLatestClockError"
-        ).innerHTML += `<p>Sorry, it's impossible to convert that numbers to clock time.</p>
-         <p>Hint1: one of your numbers shall be less or equal 2</p>
-         <p>Hint2: one of your numbers shall be less or equal to 3</p>`)
-      : countClock(a, b, c, d);
-  };
-  checkIfNumAreSuitable();
+  return `${hourFirstDigit}${hourSecondDigit}:${minuteFirstDigit}${minuteSecondDigit}`;
 };
 
 const latestClockCounting = document.createElement("article");
