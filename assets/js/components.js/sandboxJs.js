@@ -2,8 +2,8 @@ const sandbox = document.querySelector(".sandbox");
 
 // The latest clock
 
-const latestClock = (a, b, c, d) => {
-  return "00:00";
+const countLatestClock = (a, b, c, d) => {
+  console.log(a, b, c, d);
 };
 
 const latestClockCounting = document.createElement("article");
@@ -39,10 +39,10 @@ latestClockCounting.innerHTML = `
     <h3>My Solution:</h3>
     <form id="latestClockCountingForm">
     <label for="latestClockCountingInput">Enter please your 4 digits here:</label>
-    <input type="number" id="digit1Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 1 here, please" required/>
-    <input type="number" id="digit2Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 2 here, please" required/>
-    <input type="number" id="digit3Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 3 here, please" required/>
-    <input type="number" id="digit4Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 4 here, please" required/>
+    <input type="text" id="digit1Input" pattern='^[0-9]$' inputmode="numeric" placeholder="Place number 1 here, please" required/>
+    <input type="text" id="digit2Input" pattern='^[0-9]$' inputmode="numeric" placeholder="Place number 2 here, please" required/>
+    <input type="text" id="digit3Input" pattern=^[0-9]$ inputmode="numeric" placeholder="Place number 3 here, please" required/>
+    <input type="text" id="digit4Input" pattern=^[0-9]$ inputmode="numeric" placeholder="Place number 4 here, please" required/>
     <button type="submit">Find the latest clock time!</button>
     </form>
     <div id="countlatestClockResult"></div>`;
