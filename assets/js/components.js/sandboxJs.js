@@ -1,5 +1,51 @@
 const sandbox = document.querySelector(".sandbox");
+
 // The latest clock
+
+const latestClock = (a, b, c, d) => {
+  return "00:00";
+};
+
+const latestClockCounting = document.createElement("article");
+latestClockCounting.classList.add("latestClockCounting", "sandboxItem");
+addEventListener("submit", (e) => {
+  e.preventDefault();
+  let digit1 = document.querySelector("#digit1Input").value;
+  let digit2 = document.querySelector("#digit2Input").value;
+  let digit3 = document.querySelector("#digit3Input").value;
+  let digit4 = document.querySelector("#digit4Input").value;
+  let countlatestClockResult = countLatestClock(digit1, digit2, digit3, digit4);
+  countlatestClockResult
+    ? (document.getElementById("countlatestClockResult").innerHTML = "")
+    : null;
+  countlatestClockResult
+    ? (document.getElementById(
+        "countlatestClockResult"
+      ).innerHTML += `<ul>Result: 
+        <li>${countlatestClockResult}</li> 
+    </ul>`)
+    : null;
+  sandbox.appendChild(latestClockCounting);
+});
+
+latestClockCounting.innerHTML = `
+    <h2>The latest clock</h2>
+    <h3>Description:</h3>
+    <p>Write a function which receives 4 digits and returns the latest time of day that can be built with those digits.
+    The time should be in HH:MM format. Result should be a valid 24-hour time, between 00:00 and 23:59</p>
+    <h3>Example:</h3>
+    <p>digits: 1, 9, 8, 3 => result: "19:38"
+    digits: 9, 1, 2, 5 => result: "21:59" ("19:25" is also a valid time, but 21:59 is later)</p>
+    <h3>My Solution:</h3>
+    <form id="latestClockCountingForm">
+    <label for="latestClockCountingInput">Enter please your 4 digits here:</label>
+    <input type="number" id="digit1Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 1 here, please" required/>
+    <input type="number" id="digit2Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 2 here, please" required/>
+    <input type="number" id="digit3Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 3 here, please" required/>
+    <input type="number" id="digit4Input" pattern="[0-9]*" inputmode="numeric" placeholder="Place number 4 here, please" required/>
+    <button type="submit">Find the latest clock time!</button>
+    </form>
+    <div id="countlatestClockResult"></div>`;
 
 // Easy Logarithm
 const countEasyLogs = (x, a, b) => {
@@ -187,5 +233,6 @@ const createSandbox = () => {
   sandbox.appendChild(reverseString);
   sandbox.appendChild(bitCounting);
   sandbox.appendChild(logCounting);
+  sandbox.appendChild(latestClockCounting);
 };
 createSandbox();
