@@ -12,9 +12,30 @@ const countLatestClock = (a, b, c, d) => {
     return "Sorry, you can't enter negative numbers";
   }
 
-  if (a + b + c + d > 2 + 3 + 9 + 9) {
+  if (a + b + c + d > 2 + 1 + 9 + 9) {
     return "Sorry, it's impossible to convert those numbers to a valid clock time.";
   }
+
+  if (a > 2 && b > 2 && c > 2 && d > 2) {
+    return "Sorry, it's impossible to convert those numbers to a valid clock time.";
+  }
+
+  let timeBox = [a, b, c, d];
+
+  const hasTwoDigitsLessThanThree = (timeBox) => {
+    for (let i = 0; i < timeBox.length; i++) {
+      for (let k = i + 1; k < timeBox.length; k++) {
+        if (timeBox[i] < 3 && timeBox[k] < 3) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+
+  !hasTwoDigitsLessThanThree
+    ? "Sorry, it's impossible to convert those numbers to a valid clock time."
+    : null;
 
   let hourFirstDigit = Math.max(...[a, b, c, d].filter((num) => num <= 2));
   let index = [a, b, c, d].indexOf(hourFirstDigit);
