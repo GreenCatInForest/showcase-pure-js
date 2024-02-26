@@ -4,6 +4,32 @@ const sandbox = document.querySelector(".sandbox");
 
 const countLatestClock = (a, b, c, d) => {
   console.log(a, b, c, d);
+  a = parseInt(a);
+  b = parseInt(b);
+  c = parseInt(c);
+  d = parseInt(d);
+
+  let countClock = () => {
+    console.log("I'm here");
+  };
+
+  let checkIfNumAreSuitable = () => {
+    let CheckSum = 2 + 3 + 5 + 9;
+    let Sum = a + b + c + d;
+    a >= 0 && b >= 0 && c && d
+      ? null
+      : (document.getElementById(
+          "countLatestClockError"
+        ).innerHTML = `<p>Sorry, you can't enter negative numbers</p>`);
+    CheckSum < Sum
+      ? (document.getElementById(
+          "countLatestClockError"
+        ).innerHTML += `<p>Sorry, it's impossible to convert that numbers to clock time.</p>
+         <p>Hint1: one of your numbers shall be less or equal 2</p>
+         <p>Hint2: one of your numbers shall be less or equal to 3</p>`)
+      : countClock(a, b, c, d);
+  };
+  checkIfNumAreSuitable();
 };
 
 const latestClockCounting = document.createElement("article");
@@ -14,15 +40,15 @@ addEventListener("submit", (e) => {
   let digit2 = document.querySelector("#digit2Input").value;
   let digit3 = document.querySelector("#digit3Input").value;
   let digit4 = document.querySelector("#digit4Input").value;
-  let countlatestClockResult = countLatestClock(digit1, digit2, digit3, digit4);
-  countlatestClockResult
-    ? (document.getElementById("countlatestClockResult").innerHTML = "")
+  let countLatestClockResult = countLatestClock(digit1, digit2, digit3, digit4);
+  countLatestClockResult
+    ? (document.getElementById("countLatestClockResult").innerHTML = "")
     : null;
-  countlatestClockResult
+  countLatestClockResult
     ? (document.getElementById(
-        "countlatestClockResult"
+        "countLatestClockResult"
       ).innerHTML += `<ul>Result: 
-        <li>${countlatestClockResult}</li> 
+        <li>${countLatestClockResult}</li> 
     </ul>`)
     : null;
   sandbox.appendChild(latestClockCounting);
@@ -39,13 +65,14 @@ latestClockCounting.innerHTML = `
     <h3>My Solution:</h3>
     <form id="latestClockCountingForm">
     <label for="latestClockCountingInput">Enter please your 4 digits here:</label>
-    <input type="text" id="digit1Input" pattern='^[0-9]$' inputmode="numeric" placeholder="Place number 1 here, please" required/>
-    <input type="text" id="digit2Input" pattern='^[0-9]$' inputmode="numeric" placeholder="Place number 2 here, please" required/>
-    <input type="text" id="digit3Input" pattern=^[0-9]$ inputmode="numeric" placeholder="Place number 3 here, please" required/>
-    <input type="text" id="digit4Input" pattern=^[0-9]$ inputmode="numeric" placeholder="Place number 4 here, please" required/>
+    <input type="text" id="digit1Input" pattern='^[0-9]$' inputmode="numeric" placeholder="Place number here, please" required/>
+    <input type="text" id="digit2Input" pattern='^[0-9]$' inputmode="numeric" placeholder="Place number here, please" required/>
+    <input type="text" id="digit3Input" pattern=^[0-9]$ inputmode="numeric" placeholder="Place number less or equal 2 here, please" required/>
+    <input type="text" id="digit4Input" pattern=^[0-9]$ inputmode="numeric" placeholder="Place number less or equal 3 here, please" required/>
     <button type="submit">Find the latest clock time!</button>
     </form>
-    <div id="countlatestClockResult"></div>`;
+    <div id="countLatestClockError"></div>
+    <div id="countLatestClockResult"></div>`;
 
 // Easy Logarithm
 const countEasyLogs = (x, a, b) => {
