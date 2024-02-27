@@ -11,7 +11,7 @@ const countDistancePillars = (x, a, b) => {
     return "Number of pillars must be greater than 1, Distance between pillars must be between 10 and 30 meters, Width of the pillar must be between 10 and 50 centimeters";
 };
 
-console.log(countDistancePillars(1, 10, 10));
+console.log(countDistancePillars());
 
 const pillars = document.createElement("article");
 pillars.classList.add("pillars", "sandboxItem");

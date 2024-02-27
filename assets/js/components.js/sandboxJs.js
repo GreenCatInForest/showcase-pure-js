@@ -135,6 +135,19 @@ const countEasyLogs = (x, a, b) => {
 
 // console.log(array);
 
+// Multiplying to power
+
+// function multiply(number) {
+//   let numWithoutMinus = number.toString().replace(/[-]/g, "");
+//   console.log(numWithoutMinus);
+
+//   power = parseInt(numWithoutMinus.length);
+//   console.log(power);
+
+//   return number * 5 ** power;
+// }
+// console.log(multiply(10));
+
 const logCounting = document.createElement("article");
 logCounting.classList.add("logCounting", "sandboxItem");
 addEventListener("submit", (e) => {
