@@ -290,5 +290,6 @@ const createSandbox = () => {
   sandbox.appendChild(bitCounting);
   sandbox.appendChild(logCounting);
   sandbox.appendChild(latestClockCounting);
+  sandbox.appendChild(pillars);
 };
 createSandbox();
